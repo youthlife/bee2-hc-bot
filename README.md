@@ -30,13 +30,7 @@ export const UtilityPrograms = {
 
 ## Build
 ###### `config` folder with `creds.ts` file must be initialized first! 
-In order to build the project run:
-
-```powershell 
-$ npm install
-$ tsc --build 
-```
-And to run it:
+In order to build and the project:
 ```powershell 
 $ npm start
 ```
