@@ -25,7 +25,7 @@ const starify = (arr: Array<string>, dot: boolean = true): string => {
 export const creds = {
 	sign: '$',
 	name: 'Bee',
-	nick: 'Bee' + Math.floor(Math.random() * 100).toString(),
+	nick: 'Bee' //+ Math.floor(Math.random() * 100).toString(),
 	trip: process.env['TRIP'],
 	// channel: 'bee',
 	channel: 'programming',
