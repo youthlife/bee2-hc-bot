@@ -15,7 +15,7 @@
   },
   "scripts": {
 	"build": "tsc --build",
-	"bot": "node ./build/bot.js",
+	"bot": "node build/bot.js",
     "start": "npm run build && npm run bot"
   },
   "repository": {
