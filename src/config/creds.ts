@@ -11,7 +11,7 @@ export const UtilityPrograms = {
 	feat: Feat,
 	astro: Astro,
 	system: System,
-	ipInfo: IpInfo
+	// ipInfo: IpInfo
 }
 
 const starify = (arr: Array<string>, dot: boolean = true): string => {
