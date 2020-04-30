@@ -1,4 +1,4 @@
-# Bee
+# 🐝 Bee (hack.chat)
 
 ### An open source bot for hack.chat.
 
