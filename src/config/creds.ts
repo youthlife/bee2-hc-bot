@@ -31,7 +31,7 @@ export const creds = {
 	channel: 'programming',
 	join: () => creds.nick + (creds.trip ? '#' + creds.trip : ''),
 	author: 'ltp',
-	version: '2.0',
+	version: '2.0.0',
 	copyRight: '(c) 2018 - 2020',
 	repo: "https://github.com/youthlife/bee2-hc-bot",
 	bugs: "https://github.com/youthlife/bee2-hc-bot/issue",
