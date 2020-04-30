@@ -7,7 +7,7 @@
 Change the credentials in files inside src/config folder.
 
 ## Build
-###### files in `config` folder must first be initialized! 
+###### files in `config` folder must be initialized! 
 In order to build and the project:
 ```powershell 
 $ npm start
