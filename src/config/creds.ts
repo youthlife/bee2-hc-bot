@@ -33,6 +33,8 @@ export const creds = {
 	author: 'ltp',
 	version: '2.0',
 	copyRight: '(c) 2018 - 2020',
+	repo: "https://github.com/youthlife/bee2-hc-bot",
+	bugs: "https://github.com/youthlife/bee2-hc-bot/issue",
 	description:
 		starify([
 			'commands are case-sensitive',
@@ -40,7 +42,8 @@ export const creds = {
 			'commands are unique. meaning: there are no aliases',
 			'arguments are recognized before and after each flag',
 			'the vertical bar (|) is used to seperate items e.g. between arguments',
-		])
+		]),
+
 }
 
 export const UtilityNames = (): Array<string> => {

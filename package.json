@@ -20,13 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/youthlife/bee2-hc-bot-js.git"
+    "url": "git+https://github.com/youthlife/bee2-hc-bot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/youthlife/bee2-hc-bot-js/issues"
+    "url": "https://github.com/youthlife/bee2-hc-bot/issues"
   },
-  "homepage": "https://github.com/youthlife/bee2-hc-bot-js#readme"
+  "homepage": "https://github.com/youthlife/bee2-hc-bot#readme"
 }

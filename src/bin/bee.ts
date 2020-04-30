@@ -5,10 +5,12 @@ class Bee extends Command {
 	Process() {
 		this.output =
 			`name: ${creds.name}\n` +
+			`sign: ${creds.sign}\n`+
 			`author: ${creds.author}\n` +
-			`sign (trigger): ${creds.sign}\n`+
 			`version: ${creds.version}\n`+ 
-			`copyright: ${creds.copyRight}`
+			`copyright: ${creds.copyRight}\n`+
+			`repository: ${creds.repo}\n`+
+			`reporting bugs: ${creds.bugs}`
 
 		this.Send(this.output);
 	}
