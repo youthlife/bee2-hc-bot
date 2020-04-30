@@ -9,13 +9,11 @@ const dh = new IncomingDataHandler(ws);
 
 // << Join >>
 ws.onopen = () => {
-	ws.send(
-		JSON.stringify({
-			cmd: 'join',
-			channel: creds.channel,
-			nick: creds.join()
-		})
-	);
+	ws.send(JSON.stringify({
+		cmd: 'join',
+		channel: creds.channel,
+		nick: creds.join()
+	}));
 }
 // << leave >>
 ws.onclose = () => { ws.terminate() }
