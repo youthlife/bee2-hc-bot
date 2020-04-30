@@ -1,3 +1,4 @@
+import Bee from '../bin/bee';
 import Feat from '../bin/feat'
 import Help from '../bin/help'
 import Echo from '../bin/echo'
@@ -6,6 +7,7 @@ import System from '../bin/system'
 import IpInfo from '../bin/ipinfo';
 
 export const UtilityPrograms = {
+	bee: Bee,
 	echo: Echo,
 	help: Help,
 	feat: Feat,
