@@ -5,8 +5,6 @@ import Astro from '../bin/astro'
 import System from '../bin/system'
 import IpInfo from '../bin/ipinfo';
 
-// import moduleName from '../bin/ipinfo';
-
 export const UtilityPrograms = {
 	echo: Echo,
 	help: Help,

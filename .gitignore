@@ -1,6 +1,7 @@
 # own 
-test.*
 build
+test.*
+debug.*
 
 # Logs
 logs
