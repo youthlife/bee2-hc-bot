@@ -1,0 +1,30 @@
+{
+  "name": "bee",
+  "version": "2.0.0",
+  "description": "",
+  "main": "node ./build/bot.js",
+  "dependencies": {
+    "ascii-string-align": "^1.0.4",
+    "get-json": "^1.0.1",
+    "is-hexcolor": "^1.0.0",
+    "typescript": "^3.8.3",
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^7.2.2"
+  },
+  "scripts": {
+    "start": "node ./build/bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youthlife/bee2-hc-bot-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youthlife/bee2-hc-bot-js/issues"
+  },
+  "homepage": "https://github.com/youthlife/bee2-hc-bot-js#readme"
+}
