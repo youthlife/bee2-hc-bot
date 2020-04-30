@@ -7,6 +7,8 @@ import IncomingDataHandler from './controllers/IncomingDataHandler';
 const ws: WebSocket = new WebSocket('wss://hack.chat/chat-ws');
 const dh = new IncomingDataHandler(ws);
 
+console.log('<* Trip *> = ' + process.env['TRIP']);
+
 // << Join >>
 ws.onopen = () => {
 	ws.send(
