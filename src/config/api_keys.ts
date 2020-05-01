@@ -1,7 +1,7 @@
 // import keys from './debug'
 
 const api_key = {
-	ipinfo: process.env['IP_INFO']
+	ipinfo: process.env['IPINFO']
 }
 
 export default api_key;
