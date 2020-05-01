@@ -1,4 +1,4 @@
-// import api_key from "../config/api_keys";
+import api_key from "../config/api_keys";
 
 namespace API {
 	export const url = {
