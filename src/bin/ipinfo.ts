@@ -45,8 +45,8 @@ class IpInfo extends Command implements API.IAPI {
 	}
 	Process() {
 		if (isUndefined(this.mode)) return;
-
 		this.CreateUrl();
+		console.log('URL: ' + this.url);
 		getjson(this.url)
 			.then(res => {
 				this.HandleRes(res)
