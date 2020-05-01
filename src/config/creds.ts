@@ -6,6 +6,8 @@ import Astro from '../bin/astro'
 import System from '../bin/system'
 import IpInfo from '../bin/ipinfo';
 
+// import keys from './debug';
+
 export const UtilityPrograms = {
 	bee: Bee,
 	echo: Echo,
@@ -13,7 +15,7 @@ export const UtilityPrograms = {
 	feat: Feat,
 	astro: Astro,
 	system: System,
-	// ipInfo: IpInfo
+	ipInfo: IpInfo
 }
 
 const starify = (arr: Array<string>, dot: boolean = true): string => {
@@ -25,13 +27,13 @@ const starify = (arr: Array<string>, dot: boolean = true): string => {
 export const creds = {
 	sign: '$',
 	name: 'Bee',
-	nick: 'Bee' + Math.floor(Math.random() * 100).toString(),
+	nick: 'Bee', //+ Math.floor(Math.random() * 100).toString(),
 	trip: process.env['TRIP'],
-	// channel: 'bee',
-	channel: 'programming',
+	channel: 'bee',
+	// channel: 'programming',
 	join: () => creds.nick + (creds.trip ? '#' + creds.trip : ''),
 	author: 'ltp',
-	version: '2.0.0',
+	version: '2.0.4',
 	copyRight: '(c) 2018 - 2020',
 	repo: "https://github.com/youthlife/bee2-hc-bot",
 	bugs: "https://github.com/youthlife/bee2-hc-bot/issue",

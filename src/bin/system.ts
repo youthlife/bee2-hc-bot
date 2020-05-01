@@ -1,6 +1,7 @@
 import Command from "../interfaces/Command";
 import { ICommand } from "../interfaces/UtilityManager";
 import WebSocket from "ws";
+import HelpTxt from "../lib/HelpTxt";
 
 class System extends Command {
 	val: string;
@@ -26,8 +27,7 @@ class System extends Command {
 					this.Memory();
 					break;
 				default:
-					this.output = 
-					'Invalid argument\ntry reading help on this command by running: ```$help system```';
+					this.output = HelpTxt.system;
 					break;
 			}
 		else

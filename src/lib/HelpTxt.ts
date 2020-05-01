@@ -25,7 +25,6 @@ const Bind = (description: string, flag?, syntax?: string, example?: Array<strin
 	)
 }
 
-
 const HelpTxt = {
 	bee:
 		Bind('basic information about this bot'),
@@ -39,8 +38,10 @@ const HelpTxt = {
 		Bind('Some notes and features about bee', null, null, ['feat']),
 	system:
 		Bind(`This tool displays info about operating system which this bot is running on`, null,
-			'system [info|uptime|cpu|memory]', ['system cpu'], 'The default option is [info].')
-
+			'system [info|uptime|cpu|memory]', ['system cpu'], 'The default option is [info].'),
+	ipInfo:
+		Bind('Displays information about given IP address', null, 'ipInfo [ip: ip address] [geo|astro|location|currency|timezone]',
+		['ipInfo 130.33.120.3', 'ipInfo 130.33.120.3 timezone'], 'The default option is [geo]'),
 }
 
 export default HelpTxt;
