@@ -2,7 +2,7 @@
 
 namespace API {
 	export const url = {
-		key: 'apiKey=' + process.env['IPINFO'], // api_key.ipinfo,
+		key: 'apiKey=' + api_key.ipinfo,
 		base: `https://api.ipgeolocation.io/`,
 		modes: {
 			geo: 'ipgeo',

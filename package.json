@@ -1,33 +1,33 @@
 {
-  "name": "bee",
-  "version": "2.0.0",
-  "description": "",
-  "main": "node ./build/bot.js",
-  "dependencies": {
-    "@types/node": "^13.13.4",
-    "@types/ws": "^7.2.2",
-    "ascii-string-align": "^1.0.4",
-    "get-json": "^1.0.1",
-    "is-hexcolor": "^1.0.0",
-    "is-ip": "^3.1.0",
-    "typescript": "^3.8.3",
-    "ws": "^7.2.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "build": "tsc",
-    "bot": "node build/bot.js",
-    "start": "npm run build && npm run bot"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/youthlife/bee2-hc-bot.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/youthlife/bee2-hc-bot/issues"
-  },
-  "homepage": "https://github.com/youthlife/bee2-hc-bot#readme"
+	"name": "bee",
+	"version": "2.0.0",
+	"description": "",
+	"main": "node ./build/bot.js",
+	"dependencies": {
+		"@types/node": "^13.13.4",
+		"@types/ws": "^7.2.2",
+		"ascii-string-align": "^1.0.4",
+		"get-json": "^1.0.1",
+		"is-hexcolor": "^1.0.0",
+		"is-ip": "^3.1.0",
+		"typescript": "^3.8.3",
+		"ws": "^7.2.1"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"build": "tsc",
+		"bot": "node build/bot.js",
+		"start": "npm run build && npm run bot"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/youthlife/bee2-hc-bot.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/youthlife/bee2-hc-bot/issues"
+	},
+	"homepage": "https://github.com/youthlife/bee2-hc-bot#readme"
 }
