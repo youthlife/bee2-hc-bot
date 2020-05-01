@@ -36,7 +36,7 @@ export const creds = {
 	version: '2.0.4',
 	copyRight: '(c) 2018 - 2020',
 	repo: "https://github.com/youthlife/bee2-hc-bot",
-	bugs: "https://github.com/youthlife/bee2-hc-bot/issue",
+	bugs: "https://github.com/youthlife/bee2-hc-bot/issues",
 	description:
 		starify([
 			'commands are case-sensitive',
