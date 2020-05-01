@@ -1,1 +1,1 @@
-worker: tsc --watch
+worker: npm start
