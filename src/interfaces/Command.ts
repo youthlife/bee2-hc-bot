@@ -1,6 +1,7 @@
 import WebSocket from "ws";
 import { ICommand, IUtility } from "./UtilityManager";
 
+
 class Command implements IUtility {
 	ws: WebSocket;
 	output: String;
@@ -9,6 +10,8 @@ class Command implements IUtility {
 		this.ws = ws;
 		this.output = new String();
 		this.command = command;
+		// this.ArgMgr();
+		// this.FlagMgr();
 	}
 	protected ArgMgr() { }
 	protected FlagMgr() {

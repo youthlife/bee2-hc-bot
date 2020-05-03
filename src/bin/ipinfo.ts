@@ -33,29 +33,25 @@ class IpInfo extends Command implements API.IAPI {
 			if (isip1)
 				if (arg2)
 					if (isUndefined(API.modes[arg2]))
-						this.Send('Invalid option!\n');
+						this.Send(`Invalid option "${arg2}"!`);
 					else
 						this.mode = API.modes[arg2];
 				else
 					this.mode = API.modes.geo; // default mode
 			else
-				this.Send('Invalid ip address!\n');
+				this.Send(`Invalid ip address "${arg1}"!`);
 		else
 			this.Send(HelpTxt.ipInfo);
 	}
 	Process() {
 		if (isUndefined(this.mode)) return;
 		this.CreateUrl();
-		console.log('URL: ' + this.url);
 		getjson(this.url)
 			.then(res => {
 				this.HandleRes(res)
 				this.Send(this.output);
 			})
-			.catch(err => {
-				this.output = 'Response error: ' + err;
-				this.Send(this.output)
-			})
+			.catch(err => this.Send(err))
 	}
 
 	CreateUrl() {

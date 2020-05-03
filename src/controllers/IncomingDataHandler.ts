@@ -9,7 +9,7 @@ import {
 	IWhisper
 } from '../interfaces/datahandle'
 import { ChatValidation } from '../tools/chat';
-import { UtilityPrograms } from '../config/creds';
+import { UtilityPrograms, creds } from '../config/creds';
 import { IUtility } from '../interfaces/UtilityManager';
 
 class IncomingDataHandler {
@@ -26,7 +26,8 @@ class IncomingDataHandler {
 		this.iJoin = true;
 	}
 	InitializeLogin(): void {
-		this.ws.send(JSON.stringify({ cmd: 'chat', text: '/color ffff00' }));
+		if (creds.trip)
+			this.ws.send(JSON.stringify({ cmd: 'chat', text: '/color ffff00' }));
 		// this.ws.send(JSON.stringify({ cmd: 'chat', text: `... and I'm back online.` }));
 	}
 
@@ -49,6 +50,8 @@ class IncomingDataHandler {
 		if (data.text.includes(rate_limit) || data.text.includes(rate_limit2)) {
 			Warn.rlProcess();
 		}
+		else if (data.text.toLowerCase().includes('auth'))
+			console.log('Trip not registered!');
 		else
 			process.exit();
 	}

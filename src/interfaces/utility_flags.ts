@@ -8,6 +8,10 @@ namespace flags {
 		r: 'r',
 		repeat: 'repeat'
 	}
+	export const countryInfo = {
+		i: 'i',
+		index: 'index'
+	}
 }
 
 export default flags;

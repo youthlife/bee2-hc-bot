@@ -1,12 +1,13 @@
-import Bee from '../bin/bee';
+import Bee from '../bin/bee'
 import Feat from '../bin/feat'
 import Help from '../bin/help'
 import Echo from '../bin/echo'
 import Astro from '../bin/astro'
 import System from '../bin/system'
-import IpInfo from '../bin/ipinfo';
-
+import IpInfo from '../bin/ipinfo'
+import CountryInfo from '../bin/countryInfo';
 // import keys from './debug';
+
 
 export const UtilityPrograms = {
 	bee: Bee,
@@ -15,7 +16,8 @@ export const UtilityPrograms = {
 	feat: Feat,
 	astro: Astro,
 	system: System,
-	ipInfo: IpInfo
+	ipInfo: IpInfo,
+	countryInfo: CountryInfo,
 }
 
 const starify = (arr: Array<string>, dot: boolean = true): string => {
@@ -27,10 +29,10 @@ const starify = (arr: Array<string>, dot: boolean = true): string => {
 export const creds = {
 	sign: '$',
 	name: 'Bee',
-	nick: 'Bee',
+	nick: 'Bee2',
 	trip: process.env['TRIP'],
-	// channel: 'bee',
-	channel: 'programming',
+	channel: 'bee',
+	// channel: 'programming',
 	join: () => creds.nick + (creds.trip ? '#' + creds.trip : ''),
 	author: 'ltp',
 	version: '2.0.4',
@@ -44,6 +46,7 @@ export const creds = {
 			'commands are unique. meaning: there are no aliases',
 			'arguments are recognized before and after each flag',
 			'the vertical bar (|) is used to seperate items e.g. between arguments',
+			'on help command, only arguments and flags which have a (*) sign before them are required'
 		]),
 
 }
