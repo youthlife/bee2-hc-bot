@@ -29,7 +29,7 @@ const starify = (arr: Array<string>, dot: boolean = true): string => {
 export const creds = {
 	sign: '$',
 	name: 'Bee',
-	nick: 'Bee2',
+	nick: 'Bee',
 	trip: process.env['TRIP'],
 	// channel: 'bee',
 	channel: 'programming',
