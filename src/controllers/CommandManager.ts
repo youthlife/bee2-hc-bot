@@ -29,6 +29,7 @@ class CommandManager {
 		this.spCommand = null;
 		this.indexFlagArgs = null;
 	}
+	
 	private InitCommand(): void {
 		this.Command = {
 			UtilityProgram: String(),

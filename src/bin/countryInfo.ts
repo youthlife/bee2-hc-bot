@@ -8,7 +8,7 @@ import { getjson } from "../JS_Exports";
 import { IUtility, ICommand } from "../interfaces/UtilityManager";
 import HelpTxt from "../lib/HelpTxt";
 import flags from "../interfaces/utility_flags";
-import { Line } from "../tools/istring";
+import { Head } from "../tools/string";
 
 class CountryInfo extends Command implements API.IAPI {
 	url: string;
@@ -18,7 +18,8 @@ class CountryInfo extends Command implements API.IAPI {
 	catch: boolean;
 	catchIndex: number;
 	countryName: string;
-	static MAX_GUESS = 15;
+	static MAX_GUESS = 15; // May dev: user can choose a higher or lower number.
+
 	constructor(cmd: typeof ICommand, ws: WebSocket) {
 		super(cmd, ws);
 		this.output = '';
@@ -37,6 +38,7 @@ class CountryInfo extends Command implements API.IAPI {
 		else
 			this.Send(HelpTxt.countryInfo);
 	}
+
 	FlagMgr(): void {
 		let flg1 = this.command.Body.Flags[0];
 		let flg2 = this.command.Body.Flags[1];
@@ -71,6 +73,7 @@ class CountryInfo extends Command implements API.IAPI {
 		if (!this.mode)
 			this.mode = API.modes.general;// default
 	}
+
 	Process(): void {
 		if (isUndefined(this.countryName) || isUndefined(this.mode)) return;
 		this.url = API.url + this.EncodeUri(this.countryName);
@@ -79,16 +82,19 @@ class CountryInfo extends Command implements API.IAPI {
 				this.HandleRes(res);
 				this.Send(this.output);
 			})
-			.catch(e => this.Send(e))
+			.catch((e: String) => this.Send(e))
 	}
 
 	EncodeUri = (uri: string): string => encodeURIComponent(uri);
-	Switcher(res: Array<object>, i: number) {
+
+	Switcher(res: Array<object>, i: number): void {
 		if (i <= res.length && i >= 0)
 			switch (this.mode) {
 				case API.modes.general:
 					this.GeneralRes(res[i]);
 					break;
+				case API.modes.code:
+					this.Code(res[i]);
 				case API.modes.language:
 					this.Language(res[i]);
 					break;
@@ -102,6 +108,7 @@ class CountryInfo extends Command implements API.IAPI {
 		else
 			this.output = `Index out of range, must be between 0 and ${res.length}.`;
 	}
+
 	HandleRes(res: Array<object>): void {
 		if (res.length > 1 && !this.catch) // if no index and there's more than one country found.
 			this.GuessRes(res);
@@ -112,14 +119,16 @@ class CountryInfo extends Command implements API.IAPI {
 		else
 			this.output = 'Nothing found';
 	}
-	GuessRes(res: Array<object>) {
+
+	GuessRes(res: Array<object>): void {
 		let countries: Array<string> = [];
 		for (let g = 0; g < res.length; g++)
 			countries.push(`(${Latex.Compile((g + 1).toString(), WebColors.LightCoral)}) ${res[g]['name']}`);
 		this.output = `I couldn't find the country you were looking for, is it on this list ?\n`;
 		this.output += countries.slice(0, CountryInfo.MAX_GUESS).join(' ') + Latex.Compile('.', WebColors.LightCoral);
 	}
-	GeneralRes(res: object) {
+
+	GeneralRes(res: object): void {
 		for (let k in res)
 			if (!API.SpecialResponses.includes(k) && res[k]) {
 				this.output += `${k} ${this.colon} `;
@@ -133,8 +142,17 @@ class CountryInfo extends Command implements API.IAPI {
 					this.output += res[k] + '\n';
 			}
 	}
+
+	Code(res: object): void {
+		for (let k in res) {
+			this.output += `Country name ${this.colon} ` + res[k]['name'];
+			this.output += `Country code ISO2 ${this.colon} ` + res[k]['alpha2Code'];
+			this.output += `Country code ISO3 ${this.colon} ` + res[k]['alpha3Code'];
+		}
+	}
+
 	// curr and lang are in array, unlike trans.
-	Currency(res: object) {
+	Currency(res: object): void {
 		for (let k in res)
 			if (k == 'currencies')
 				if (API.SpecialResponses.includes(k) && res[k])
@@ -145,9 +163,10 @@ class CountryInfo extends Command implements API.IAPI {
 									this.output += `${a} ${this.colon} ${res[k][i][a]}\n`;
 							this.output += '\\-'.repeat(10) + '\n';
 						}
-		this.output = Line(this.output.toString(), 20);
+		this.output = Head(this.output.toString(), 20);
 	}
-	Language(res: object) {
+
+	Language(res: object): void {
 		for (let k in res)
 			if (k == 'languages')
 				if (API.SpecialResponses.includes(k) && res[k])
@@ -158,9 +177,10 @@ class CountryInfo extends Command implements API.IAPI {
 									this.output += `${a} ${this.colon} ${res[k][i][a]}\n`;
 							this.output += '\\-'.repeat(10) + '\n';
 						}
-		this.output = Line(this.output.toString(), 20);
+		this.output = Head(this.output.toString(), 20);
 	}
-	Translation(res: object) {
+
+	Translation(res: object): void {
 		for (let k in res)
 			if (k == 'translations')
 				if (API.SpecialResponses.includes(k) && res[k])

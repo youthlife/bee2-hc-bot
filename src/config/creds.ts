@@ -6,6 +6,8 @@ import Astro from '../bin/astro'
 import System from '../bin/system'
 import IpInfo from '../bin/ipinfo'
 import CountryInfo from '../bin/countryInfo';
+import key from './keys'
+import keys from './debug'
 // import keys from './debug';
 
 
@@ -29,27 +31,32 @@ const starify = (arr: Array<string>, dot: boolean = true): string => {
 export const creds = {
 	sign: '$',
 	name: 'Bee',
-	nick: 'Bee2',
-	trip: process.env['TRIP'],
-	channel: 'bee',
-	// channel: 'programming',
+	nick: 'Bee',
+	trip: key.trip, // keys.trip
+	channel: keys.channel,
 	join: () => creds.nick + (creds.trip ? '#' + creds.trip : ''),
 	author: 'ltp',
-	version: '2.0.4',
-	copyRight: '(c) 2018 - 2020',
+	version: '2',
+	copyRight: '(c) 2018-2020',
 	repo: "https://github.com/youthlife/bee2-hc-bot",
 	bugs: "https://github.com/youthlife/bee2-hc-bot/issues",
 	description:
 		starify([
 			'commands are case-sensitive',
 			'all flags come after a single hyphen (-)',
-			'commands are unique. meaning: there are no aliases',
+			'commands are unique. meaning: there are no aliases (yet)',
 			'arguments are recognized before and after each flag',
 			'the vertical bar (|) is used to seperate items e.g. between arguments',
 			'on help command, only arguments and flags which have a (*) sign before them are required'
-		]),
-
+		])
 }
+
+export const newFeatures: string = starify([
+	`fixed and improved help`,
+	`improved documentation on github readme`,
+	`code flag option added to countryInfo command`,
+	`help command's help defines each sign used by it`
+])
 
 export const UtilityNames = (): Array<string> => {
 	let arr: Array<string> = [];

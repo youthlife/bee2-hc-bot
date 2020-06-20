@@ -1,8 +1,8 @@
-import api_key from "../config/api_keys";
+import keys from "../config/keys";
 
 namespace API {
 	export const url = {
-		key: 'apiKey=' + api_key.ipinfo,
+		key: 'apiKey=' + keys.api_key.ipinfo,
 		base: `https://api.ipgeolocation.io/`,
 		modes: {
 			geo: 'ipgeo',

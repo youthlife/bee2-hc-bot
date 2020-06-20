@@ -31,7 +31,7 @@ class Help extends Command {
 		let output = '';
 		output += 'Commands: \n';
 		output += UtilityNames().join(' . ') + '.\n';
-		output += '\\> run ```$feat``` to get some notes and features.';
+		output += '\\> run ```$feat``` to get some notes and info on features.';
 		this.Send(output);
 	}
 }

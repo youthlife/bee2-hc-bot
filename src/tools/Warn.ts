@@ -1,8 +1,7 @@
 class Warn {
     // function:
-    /*
-        wait for 5 minutes then send message "Sorry, I had been rate-limited!"
-    */
+    // wait for 5 minutes then send (or set) excuse (to be used by `excuse` command)
+    
     public static rlProcess() {
 
     }

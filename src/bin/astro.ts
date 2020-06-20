@@ -38,7 +38,7 @@ class Astro extends Command implements API.IAPI {
 	HandleRes(res: API.IJsonBone): void {
 		let sortedPeople = this.SortPeople(res.people);
 
-		this.output += `${Latex.Compile(res.number.toString(), WebColors.AliceBlue, true)} Astronauts are currently in space.`;
+		this.output += `${Latex.Compile(res.number.toString(), WebColors.AliceBlue, true)} Astronauts are currently in space`;
 		for (let craft in sortedPeople) {
 			this.output += `\nCraft: ${craft}`;
 			for (let astronaut of sortedPeople[craft])
