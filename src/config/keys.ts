@@ -1,7 +1,7 @@
 // import keys from './debug';
 
 const keys = {
-	channel: "programming2",
+	channel: "programming",
 	trip: process.env['TRIP'],
 
 	api_key: {

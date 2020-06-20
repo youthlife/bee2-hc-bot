@@ -6,7 +6,7 @@ import Astro from '../bin/astro'
 import System from '../bin/system'
 import IpInfo from '../bin/ipinfo'
 import CountryInfo from '../bin/countryInfo';
-import key from './keys'
+import keys from './keys'
 
 
 export const UtilityPrograms = {
@@ -30,7 +30,7 @@ export const creds = {
 	sign: '$',
 	name: 'Bee',
 	nick: 'Bee',
-	trip: key.trip, // keys.trip
+	trip: keys.trip, // keys.trip
 	channel: keys.channel,
 	join: () => creds.nick + (creds.trip ? '#' + creds.trip : ''),
 	author: 'ltp',
