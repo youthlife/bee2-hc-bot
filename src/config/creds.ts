@@ -7,8 +7,6 @@ import System from '../bin/system'
 import IpInfo from '../bin/ipinfo'
 import CountryInfo from '../bin/countryInfo';
 import key from './keys'
-import keys from './debug'
-// import keys from './debug';
 
 
 export const UtilityPrograms = {

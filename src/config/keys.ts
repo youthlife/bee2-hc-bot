@@ -1,11 +1,11 @@
 // import keys from './debug';
 
 const keys = {
-	channel: "programming",
+	channel: "programming2",
 	trip: process.env['TRIP'],
 
 	api_key: {
-		ipinfo: process.env['IPINFO']
+		ipinfo: process.env['IPINFO'],
 	}
 }
 
